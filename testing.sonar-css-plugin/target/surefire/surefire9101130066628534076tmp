@@ -1,0 +1,5 @@
+#surefire
+#Mon Oct 03 11:21:00 EDT 2011
+user.dir=C\:\\p4\\LS\\mainline\\projects\\testing\\sonar-css-plugin
+localRepository=C\:\\Users\\kweisser\\.m2\\repository
+basedir=C\:\\p4\\LS\\mainline\\projects\\testing\\sonar-css-plugin

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+  	<groupId>blackboard.sonar.plugins</groupId>
+	<artifactId>sonar-css-plugin</artifactId>
+  	<packaging>sonar-plugin</packaging>
+	<version>1.0</version>
+	<name>Sonar CSS Plugin</name>
+  	
+  	<dependencyManagement>
+    	<dependencies>
+      		<dependency>
+        		<groupId>org.codehaus.sonar</groupId>
+		        <artifactId>sonar-plugin-api</artifactId>
+		        <version>${sonar.version}</version>
+		        <!-- dependencies of sonar-plugin-api (pmd) should not get older version of junit -->
+        		<exclusions>
+          			<exclusion>
+            			<groupId>junit</groupId>
+            			<artifactId>junit</artifactId>
+          			</exclusion>
+        		</exclusions>
+      		</dependency>
+    	</dependencies>
+  	</dependencyManagement>
+
+	<dependencies>
+    	<dependency>
+      		<groupId>org.codehaus.sonar</groupId>
+      		<artifactId>sonar-plugin-api</artifactId>
+      		<version>2.4</version>
+    	</dependency>
+
+	    <!-- lexical analysis -->
+    	<dependency>
+	    	<groupId>org.codehaus.sonar</groupId>
+	      	<artifactId>sonar-channel</artifactId>
+	      	<version>2.4</version>
+    	</dependency>
+
+	    <!-- CSS parser -->
+    	<dependency>
+		    <groupId>net.sourceforge.cssparser</groupId>
+		    <artifactId>cssparser</artifactId>
+		    <version>0.9.5</version>
+		    <scope>compile</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.w3c.css</groupId>
+		    <artifactId>sac</artifactId>
+		    <version>1.3</version>
+		    <scope>compile</scope>
+		</dependency>
+	</dependencies>
+
+  	<build>
+	    <plugins>
+	    	<plugin>
+	        	<groupId>org.codehaus.sonar</groupId>
+	        	<artifactId>sonar-packaging-maven-plugin</artifactId>
+	        	<version>1.0</version>
+	        	<extensions>true</extensions>
+	        	<configuration>
+	          		<pluginClass>blackboard.sonar.plugins.css.CssPlugin</pluginClass>
+	        	</configuration>
+	      	</plugin>
+	      	<plugin>
+	        	<groupId>org.apache.maven.plugins</groupId>
+	        	<artifactId>maven-compiler-plugin</artifactId>
+	        	<version>2.0.2</version>
+	        	<configuration>
+	          		<source>1.5</source>
+	          		<target>1.5</target>
+	          		<encoding>UTF-8</encoding>
+	       		</configuration>
+	    	</plugin>
+		</plugins>
+	</build>
+</project>
