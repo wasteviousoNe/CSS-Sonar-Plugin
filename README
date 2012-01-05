@@ -1,0 +1,1 @@
+The code sample I selected is an extension to Sonar which I created. This plugin performs static analysis of CSS file to provide various metrics about an application or products CSS style sheets. It will calculate total number of lines, number of comment lines, and apply static rules against against your selectors to ensure that the optimum code is selection.
