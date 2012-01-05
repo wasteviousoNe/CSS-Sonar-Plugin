@@ -1,8 +1,8 @@
-<p>The code sample is an extension to Sonar. This plugin performs static analysis of CSS file and provides the following:
+The code sample is an extension to Sonar. This plugin performs static analysis of CSS file and provides the following:
 * Number of lines
 * Number of commented lines
-* Number of violations (the rules are based common selector optimizations)</p>
+* Number of violations (the rules are based common selector optimizations)
 
-<p>This code was created to ensure code quality.</p>
+This code was created to ensure code quality.
 
-<p>I'm proud of this code because it extensible and can catch potentially bad design early on.</p>
+I'm proud of this code because it extensible and can catch potentially bad design early on.
